@@ -6,7 +6,6 @@ from datetime import datetime
 app = Flask(__name__)
 
 bootstrap = Bootstrap(app)
-
 moment = Moment(app)
 
 @app.route('/')
