@@ -3,7 +3,6 @@ from flask.ext.bootstrap import Bootstrap
 from flask.ext.moment import Moment
 from datetime import datetime
 
-
 app = Flask(__name__)
 
 bootstrap = Bootstrap(app)
