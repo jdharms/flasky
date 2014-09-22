@@ -3,7 +3,6 @@
 
 {% block scripts %}
 {{ super() }}
-{{ moment.include_moment() }}
 {% endblock %}
 
 {% block title %}Flasky{% endblock %}
@@ -30,6 +29,7 @@
                 <li><a href="{{ url_for('auth.logout') }}">Sign Out</a></li>
                 {% else %}
                 <li><a href="{{ url_for('auth.login') }}">Sign In</a></li>
+                <li><a href="{{ url_for('auth.register') }}">Register</a></li>
                 {% endif %}
             </ul>
         </div>
@@ -39,6 +39,7 @@
 
 {% block content %}
 <div class="container">
+
     {% for message in get_flashed_messages() %}
     <div class="alert alert-warning">
         <button type="button" class="close" data-dismiss="alert">&times;</button>
@@ -47,6 +48,6 @@
     {% endfor %}
 
     {% block page_content %}{% endblock %}
-</div>
 
+</div>
 {% endblock %}
