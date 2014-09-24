@@ -2,6 +2,8 @@ from flask import render_template, session, url_for, redirect, abort
 from . import main
 from .. import db
 from ..models import User
+from datetime import datetime
+
 
 @main.route('/', methods=['GET', 'POST'])
 def index():

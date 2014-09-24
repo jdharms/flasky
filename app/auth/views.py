@@ -2,9 +2,15 @@ from . import auth
 from .forms import LoginForm, RegistrationForm
 from flask import render_template, redirect, request, url_for, flash
 from ..models import User
-from flask.ext.login import login_user, login_required, logout_user
+from flask.ext.login import login_user, login_required, logout_user, current_user
 from .. import db
 from datetime import datetime
+
+@auth.before_app_request
+def before_request():
+    if current_user.is_authenticated():
+        current_user.ping()
+    #TODO: Ensure user's confirmed email address
 
 @auth.route('/login', methods=['GET', 'POST'])
 def login():
